@@ -92,6 +92,41 @@ export const projects: Project[] = [
   },
 ]
 
+export const projectCategories = [
+  {
+    slug: 'casas',
+    title: 'Casas',
+    description:
+      'Proyectos de arquitectura residencial diseñados para mejorar la calidad de vida, combinando funcionalidad, diseño y una integración armónica con el entorno.',
+    image: '/images/project-casas.png',
+    total: 4,
+  },
+  {
+    slug: 'remodelaciones',
+    title: 'Remodelaciones',
+    description:
+      'Intervenciones arquitectónicas que transforman espacios existentes, optimizando su funcionalidad, estética y eficiencia.',
+    image: '/images/project-remodelacion.png',
+    total: 4,
+  },
+  {
+    slug: 'comerciales',
+    title: 'Comerciales',
+    description:
+      'Diseño y desarrollo de oficinas, clínicas y espacios comerciales adaptados a la identidad y objetivos de cada empresa.',
+    image: '/images/project-comercial.png',
+    total: 2,
+  },
+  {
+    slug: 'interiores',
+    title: 'Diseño Interior & Mobiliario',
+    description:
+      'Diseño de interiores y mobiliario personalizado que combina materiales, funcionalidad y detalles para crear espacios únicos.',
+    image: '/images/project-interior.png',
+    total: 5,
+  },
+]
+
 export const categories = ['Todos', 'Residencial', 'Comercial', 'Remodelación', 'Diseño de Interiores']
 
 export type Service = {
@@ -208,10 +243,10 @@ export const contactInfo = {
 }
 
 export const navLinks = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Proceso', href: '#proceso' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Inicio', href: '/#inicio' },
+  { label: 'Proyectos', href: '/#proyectos' },
+  { label: 'Nosotros', href: '/#nosotros' },
+  { label: 'Servicios', href: '/#servicios' },
+  { label: 'Proceso', href: '/#proceso' },
+  { label: 'Contacto', href: '/#contacto' },
 ]
