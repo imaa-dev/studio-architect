@@ -41,7 +41,7 @@ export const projects: Project[] = [
   {
     slug: 'cocina-mármol',
     title: 'Interior Marmol',
-    category: 'diseno',
+    category: 'interiores',
     location: 'Las Condes, RM',
     year: '2023',
     image: '/images/project-interior.png',
@@ -185,7 +185,7 @@ export const projectCategories: ProjectCategory[] = [
   {
     slug: 'interiores',
     title: 'Diseño Interior & Mobiliario',
-    category: 'diseno',
+    category: 'interiores',
     description:
       'Diseño de interiores y mobiliario personalizado que combina materiales, funcionalidad y detalles para crear espacios únicos.',
     image: '/images/project-interior.png',
