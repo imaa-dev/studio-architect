@@ -70,7 +70,7 @@ export function Navbar() {
         </ul>
 
         <a
-          href="#contacto"
+          href="/#contacto"
           className={cn(
             'hidden rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-300 lg:inline-flex hover:scale-[1.03]',
             scrolled

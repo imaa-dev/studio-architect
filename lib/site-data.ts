@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     slug: 'casa-mirador',
     title: 'Casa Mirador',
-    category: 'Residencial',
+    category: 'casas',
     location: 'Santiago, RM',
     year: '2024',
     image: '/images/project-casas.png',
@@ -28,7 +28,7 @@ export const projects: Project[] = [
   {
     slug: 'remodelacion-los-andes',
     title: 'Remodelación Los Andes',
-    category: 'Remodelación',
+    category: 'remodelacion',
     location: 'Colina, RM',
     year: '2024',
     image: '/images/project-remodelacion.png',
@@ -41,7 +41,7 @@ export const projects: Project[] = [
   {
     slug: 'cocina-mármol',
     title: 'Interior Marmol',
-    category: 'Diseño de Interiores',
+    category: 'diseno',
     location: 'Las Condes, RM',
     year: '2023',
     image: '/images/project-interior.png',
@@ -54,7 +54,7 @@ export const projects: Project[] = [
   {
     slug: 'complejo-etex',
     title: 'Complejo Comercial',
-    category: 'Comercial',
+    category: 'comerciales',
     location: 'Santiago, RM',
     year: '2023',
     image: '/images/project-comercial.png',
@@ -67,7 +67,7 @@ export const projects: Project[] = [
   {
     slug: 'oficinas-agustinas',
     title: 'Oficinas Agustinas',
-    category: 'Comercial',
+    category: 'comerciales',
     location: 'Santiago Centro, RM',
     year: '2024',
     image: '/images/project-oficina.png',
@@ -80,7 +80,7 @@ export const projects: Project[] = [
   {
     slug: 'edificio-reflejo',
     title: 'Edificio Reflejo',
-    category: 'Residencial',
+    category: 'casas',
     location: 'Providencia, RM',
     year: '2024',
     image: '/images/project-arquitectura.png',
@@ -92,42 +92,121 @@ export const projects: Project[] = [
   },
 ]
 
-export const projectCategories = [
+export interface ProjectCategory {
+  slug: string
+  title: string
+  category: string
+  description: string
+  image: string
+  total: number
+
+  intro: {
+    eyebrow: string
+    title: string
+    description: string
+    counterLabel: string
+    counterDescription: string
+  }
+}
+
+export const projectCategories: ProjectCategory[] = [
   {
     slug: 'casas',
     title: 'Casas',
+    category: 'casas',
     description:
       'Proyectos de arquitectura residencial diseñados para mejorar la calidad de vida, combinando funcionalidad, diseño y una integración armónica con el entorno.',
     image: '/images/project-casas.png',
     total: 4,
+        intro: {
+      eyebrow: 'Proyectos',
+
+      title:
+        'Renovamos espacios para una nueva forma de vivir.',
+
+      description:
+        'Cada remodelación busca potenciar el inmueble existente, incorporando nuevas distribuciones, materialidades y soluciones contemporáneas que respetan su contexto y aumentan su valor.',
+
+      counterLabel:
+        'Portafolio',
+
+      counterDescription:
+        'proyectos de remodelación ejecutados.',
+    },
   },
   {
-    slug: 'remodelaciones',
+    slug: 'remodelacion',
     title: 'Remodelaciones',
+    category: 'remodelacion',
     description:
       'Intervenciones arquitectónicas que transforman espacios existentes, optimizando su funcionalidad, estética y eficiencia.',
     image: '/images/project-remodelacion.png',
     total: 4,
+        intro: {
+      eyebrow: 'Proyectos',
+
+      title:
+        'Renovamos espacios para una nueva forma de vivir.',
+
+      description:
+        'Cada remodelación busca potenciar el inmueble existente, incorporando nuevas distribuciones, materialidades y soluciones contemporáneas que respetan su contexto y aumentan su valor.',
+
+      counterLabel:
+        'Portafolio',
+
+      counterDescription:
+        'proyectos de remodelación ejecutados.',
+    },
   },
   {
     slug: 'comerciales',
     title: 'Comerciales',
+    category: 'comerciales',
     description:
       'Diseño y desarrollo de oficinas, clínicas y espacios comerciales adaptados a la identidad y objetivos de cada empresa.',
     image: '/images/project-comercial.png',
     total: 2,
+        intro: {
+      eyebrow: 'Proyectos',
+
+      title:
+        'Renovamos espacios para una nueva forma de vivir.',
+
+      description:
+        'Cada remodelación busca potenciar el inmueble existente, incorporando nuevas distribuciones, materialidades y soluciones contemporáneas que respetan su contexto y aumentan su valor.',
+
+      counterLabel:
+        'Portafolio',
+
+      counterDescription:
+        'proyectos de remodelación ejecutados.',
+    },
   },
   {
     slug: 'interiores',
     title: 'Diseño Interior & Mobiliario',
+    category: 'diseno',
     description:
       'Diseño de interiores y mobiliario personalizado que combina materiales, funcionalidad y detalles para crear espacios únicos.',
     image: '/images/project-interior.png',
     total: 5,
+        intro: {
+      eyebrow: 'Proyectos',
+
+      title:
+        'Renovamos espacios para una nueva forma de vivir.',
+
+      description:
+        'Cada remodelación busca potenciar el inmueble existente, incorporando nuevas distribuciones, materialidades y soluciones contemporáneas que respetan su contexto y aumentan su valor.',
+
+      counterLabel:
+        'Portafolio',
+
+      counterDescription:
+        'proyectos de remodelación ejecutados.',
+    },
   },
 ]
-
-export const categories = ['Todos', 'Residencial', 'Comercial', 'Remodelación', 'Diseño de Interiores']
 
 export type Service = {
   number: string
