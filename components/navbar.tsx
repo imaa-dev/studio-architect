@@ -9,14 +9,24 @@ import { cn } from '@/lib/utils'
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-
+  const [isDesktop, setIsDesktop] = useState(false)
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 1024px)')
 
+    const update = () => setIsDesktop(media.matches)
+
+    update()
+
+    media.addEventListener('change', update)
+
+    return () => media.removeEventListener('change', update)
+  }, [])
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => {
@@ -28,14 +38,17 @@ export function Navbar() {
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-500',
-        scrolled
-          ? 'bg-background/80 backdrop-blur-xl border-b border-border shadow-[0_1px_30px_-15px_rgba(0,0,0,0.3)]'
+
+        scrolled || open
+          ? 'bg-background border-b border-border shadow-[0_1px_30px_-15px_rgba(0,0,0,0.3)]'
           : 'bg-transparent',
       )}
     >
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
-        <a href="#inicio" aria-label="MI Arquitectos - Inicio">
-          <Logo variant={scrolled ? 'dark' : 'light'} />
+        <a href="/#inicio" aria-label="MI Arquitectos - Inicio">
+          <Logo
+            variant={scrolled || open ? 'dark' : 'light'}
+          />
         </a>
 
         <ul className="hidden items-center gap-9 lg:flex">
@@ -44,10 +57,10 @@ export function Navbar() {
               <a
                 href={link.href}
                 className={cn(
-                  'text-sm font-medium tracking-tight transition-colors',
-                  scrolled
-                    ? 'text-muted-foreground hover:text-foreground'
-                    : 'text-primary-foreground/80 hover:text-primary-foreground',
+                  "text-sm font-medium transition-colors hover:text-primary",
+                  scrolled || open
+                    ? "text-foreground"
+                    : "text-primary-foreground"
                 )}
               >
                 {link.label}
@@ -75,7 +88,9 @@ export function Navbar() {
           aria-expanded={open}
           className={cn(
             'inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors lg:hidden',
-            scrolled || open ? 'text-foreground' : 'text-primary-foreground',
+            scrolled || open || !isDesktop
+              ? 'text-foreground'
+              : 'text-primary-foreground',
           )}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

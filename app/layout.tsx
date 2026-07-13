@@ -42,6 +42,9 @@ export const metadata: Metadata = {
     locale: 'es_CL',
     siteName: 'MI Arquitectos',
   },
+  icons: {
+    icon: '/icon.jpg',
+  },
   generator: 'v0.app',
 }
 
