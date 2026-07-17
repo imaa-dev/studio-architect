@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'
 import { Logo } from '@/components/logo'
 import { navLinks } from '@/lib/site-data'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -46,9 +47,10 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
         <a href="/#inicio" aria-label="MI Arquitectos - Inicio">
-          <Logo
+          <Image alt='logo-img' width={42} height={22} src="/images/logo.jpg" />
+          {/* <Logo
             variant={scrolled || open ? 'dark' : 'light'}
-          />
+          /> */}
         </a>
 
         <ul className="hidden items-center gap-9 lg:flex">

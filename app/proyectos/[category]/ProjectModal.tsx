@@ -5,34 +5,34 @@ import { X } from "lucide-react";
 import { Project } from "@/lib/site-data";
 
 export default function ProjectModal({
-    project,
-    onClose,
+  project,
+  onClose,
 }: {
-    project: Project | null
-    onClose: () => void
+  project: Project | null
+  onClose: () => void
 }) {
-    useEffect(() => {
-        document.body.style.overflow = project ? 'hidden' : ''
+  useEffect(() => {
+    document.body.style.overflow = project ? 'hidden' : ''
 
-        return () => {
-            document.body.style.overflow = ''
-        }
-    }, [project])
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [project])
 
-    useEffect(() => {
-        const handler = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') onClose()
-        }
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
 
-        window.addEventListener('keydown', handler)
+    window.addEventListener('keydown', handler)
 
-        return () => window.removeEventListener('keydown', handler)
-    }, [onClose])
+    return () => window.removeEventListener('keydown', handler)
+  }, [onClose])
 
-    if (!project) return null
+  if (!project) return null
 
-    return (
-          <AnimatePresence>
+  return (
+    <AnimatePresence>
       {project && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -52,7 +52,7 @@ export default function ProjectModal({
             <button
               onClick={onClose}
               aria-label="Close project"
-                className="
+              className="
                     absolute
                     right-5
                     top-5
@@ -72,7 +72,7 @@ export default function ProjectModal({
             >
               <X className="h-4 w-4" />
             </button>
-            <div  className="h-full overflow-y-auto">
+            <div className="h-full overflow-y-auto">
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted">
                 <img
                   src={project.image}
@@ -92,31 +92,26 @@ export default function ProjectModal({
                     {project.summary}
                   </p>
                   <dl className="grid grid-cols-2 gap-6 text-sm md:grid-cols-1 md:border-l md:border-border md:pl-10">
-                    <Info label="Location" value={project.location} />
-                    <Info label="Year" value={project.year} />
+                    <Info label="Ubicación" value={project.location} />
+                    <Info label="Año" value={project.year} />
                     {project.area && <Info label="Area" value={project.area} />}
-                    {project.structure && <Info label="Structure" value={project.structure} />}
-                    {project.materials && <Info label="Materials" value={project.materials} />}
+                    {project.estructure && <Info label="Estructura" value={project.estructure} />}
                   </dl>
                 </div>
                 <div className="mt-16 grid gap-4 md:grid-cols-2">
-                  <div className="aspect-[4/3] overflow-hidden bg-muted">
-                    <img
-                      src={project.image}
-                      alt=""
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="aspect-[4/3] overflow-hidden bg-muted">
-                    <img
-                      src={project.image}
-                      alt=""
-                      className="h-full w-full scale-110 object-cover"
-                      loading="lazy"
-                      style={{ objectPosition: "right center" }}
-                    />
-                  </div>
+                  {project.gallery.map((image, index) => (
+                    <div
+                      key={index}
+                      className="aspect-[4/3] overflow-hidden bg-muted"
+                    >
+                      <img
+                        src={image}
+                        alt={`${project.title} ${index + 1}`}
+                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -124,7 +119,7 @@ export default function ProjectModal({
         </motion.div>
       )}
     </AnimatePresence>
-    )
+  )
 }
 
 function Info({ label, value }: { label: string; value: string }) {

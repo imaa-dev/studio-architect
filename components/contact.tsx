@@ -13,12 +13,38 @@ const details = [
 
 export function Contact() {
   const [sent, setSent] = useState(false)
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSent(true)
-    setTimeout(() => setSent(false), 4000)
-    e.currentTarget.reset()
+
+    setLoading(true)
+    setError('')
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch('/contact.php', {
+        method: 'POST',
+        body: formData,
+      })
+
+      const text = await response.text()
+
+      if (!response.ok) {
+        throw new Error(text)
+      }
+
+      setSent(true)
+      form.reset()
+
+      setTimeout(() => setSent(false), 4000)
+    } catch (err) {
+      setError('No fue posible enviar el mensaje.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -76,19 +102,19 @@ export function Contact() {
               className="flex h-full flex-col rounded-3xl border border-border bg-background p-8 lg:p-10"
             >
               <div className="grid gap-6 sm:grid-cols-2">
-                <Field id="nombre" label="Tu nombre" type="text" placeholder="Nombre y apellido" />
+                <Field id="name" label="Tu nombre" type="text" placeholder="Nombre y apellido" />
                 <Field id="email" label="Tu email" type="email" placeholder="tucorreo@ejemplo.com" />
               </div>
               <div className="mt-6">
-                <Field id="asunto" label="Asunto" type="text" placeholder="¿En qué podemos ayudarte?" />
+                <Field id="subject" label="Asunto" type="text" placeholder="¿En qué podemos ayudarte?" />
               </div>
               <div className="mt-6 flex flex-1 flex-col">
                 <label htmlFor="mensaje" className="text-sm font-medium text-muted-foreground">
                   Mensaje
                 </label>
                 <textarea
-                  id="mensaje"
-                  name="mensaje"
+                  id="message"
+                  name="message"
                   required
                   rows={6}
                   placeholder="Cuéntanos sobre tu proyecto..."
@@ -97,9 +123,12 @@ export function Contact() {
               </div>
               <button
                 type="submit"
-                className="group mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-base font-medium text-background transition-all duration-300 hover:scale-[1.02]"
+                disabled={loading}
+                className="group mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-base font-medium text-background transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
               >
-                {sent ? (
+                {loading ? (
+                  'Enviando...'
+                ) : sent ? (
                   <>
                     <Check className="h-5 w-5" />
                     Mensaje enviado
@@ -111,6 +140,11 @@ export function Contact() {
                   </>
                 )}
               </button>
+              {error && (
+                <p className="mt-4 text-center text-sm text-red-600">
+                  {error}
+                </p>
+              )}
             </form>
           </Reveal>
         </div>

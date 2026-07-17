@@ -26,7 +26,7 @@ export default function ProjectGrid({
                 {projects.map((project) => (
 
                     <button
-                        key={project.slug}
+                        key={project.title}
                         onClick={() => setSelectedProject(project)}
                         className="
                           group

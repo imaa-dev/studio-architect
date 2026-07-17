@@ -5,12 +5,17 @@ export function Hero() {
     <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden">
       {/* Background image with subtle cinematic zoom */}
       <div className="absolute inset-0">
-        <img
-          src="/images/hero.png"
-          alt="Casa moderna minimalista al atardecer con grandes ventanales iluminados"
-          className="h-full w-full origin-center object-cover animate-kenburns"
-          fetchPriority="high"
-        />
+        <video
+        src="/images/video/clip.mp4"
+        className="h-full w-full origin-center object-cover animate-kenburns"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      >
+        Tu navegador no soporta la reproducción de video.
+      </video>
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/75" />
         <div className="absolute inset-0 bg-black/20" />

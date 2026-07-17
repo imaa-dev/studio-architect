@@ -7,7 +7,7 @@ export function CTA() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="relative overflow-hidden rounded-[2rem] lg:rounded-[2.5rem]">
           <img
-            src="/images/project-arquitectura.png"
+            src="/images/comerciales-oficinas/laboratorio/vista 02 color 1.png"
             alt="Proyecto arquitectónico moderno al atardecer"
             className="absolute inset-0 h-full w-full object-cover"
           />

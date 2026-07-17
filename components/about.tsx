@@ -35,7 +35,7 @@ export function About() {
           <Reveal className="relative">
             <div className="relative overflow-hidden rounded-3xl">
               <img
-                src="/images/founder.png"
+                src="/images/matias.png"
                 alt="Matías Ignacio Alfaro, Arquitecto y fundador de MI Arquitectos"
                 className="aspect-[4/5] w-full object-cover"
               />
