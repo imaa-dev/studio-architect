@@ -1,0 +1,30 @@
+# Mensaje de propuesta a mi cliente de SEO
+
+Estimado Matías,
+
+Espero te encuentres muy bien.
+
+Te escribe Carlos Oliva, Director de Vórtice Web & SEO (agencia de ingeniería web y posicionamiento orgánico con sede en Miami y cobertura en Chile).
+
+Buscando estudios de arquitectura y visualización 3D en Santiago, llegué a la página 8 de Google y encontré tu sitio miarquitectos.cl. Estuve revisando tus proyectos (los renders residenciales y las remodelaciones comerciales) y la calidad estética del portafolio es de primer nivel.
+
+Sin embargo, al auditar la telemetría técnica de tu dominio en Google Chile, detectamos el motivo exacto por el cual el buscador te mantiene en página 8 con 0 visitas orgánicas al mes, pese al gran trabajo visual que tienes:
+
+Jerarquía Semántica Desconectada de la Búsqueda Real: Tu encabezado principal está configurado como "Transformamos ideas en espacios extraordinarios". Es un excelente eslogan de marca, pero Googlebot no lo asocia con las búsquedas que hacen clientes reales en Santiago.
+Efecto Sandbox por Ausencia de Autoridad: Al ser un dominio registrado en 2025 con 0 enlaces externos de referencia, los algoritmos de Google consideran el sitio en fase de prueba y no le otorgan relevancia frente a oficinas tradicionales.
+Falta de Silos de Conversión: Todos tus servicios están concentrados en una sola vista, impidiendo que Google posicione páginas satélite independientes para comunas clave como Las Condes, Vitacura o Chicureo.
+Oportunidad de Mercado Detectada en Chile:
+En nuestra auditoría identificamos términos de búsqueda con altísima demanda comercial activa en Google Chile que tu sitio actualmente no está aprovechando:
+
+arquitectos en chile: ~2.400 búsquedas/mes
+diseño de casas: ~1.600 búsquedas/mes
+remodelacion de casas: ~1.300 búsquedas/mes
+estudio de arquitectura: ~720 búsquedas/mes
+oficinas de arquitectura: ~480 búsquedas/mes
+Cada una de estas frases representa entre 400 y 2.500 personas al mes buscando activamente contratar servicios de arquitectura. Estas palabras se pueden integrar quirúrgicamente dentro de la estructura, metadatos y páginas satélite de tu sitio web para que los clientes te encuentren directamente en Google.
+
+Lo positivo es que tu sitio ya cuenta con una base moderna y excelente material visual. Con una reestructuración de intenciones de búsqueda y una estrategia de autoridad inicial, miarquitectos.cl puede dar el salto de la página 8 a la primera página de Google en pocos meses de trabajo con nosotros, sin necesidad de rehacer tu diseño.
+
+Si te resulta de interés, con gusto te comparto el diagnóstico técnico completo de palabras clave que realizamos sobre tu sector para que lo evalúes con calma.
+
+Un saludo cordial,
