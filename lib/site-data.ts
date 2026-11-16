@@ -933,25 +933,20 @@ export const processSteps = [
   {
     number: '01',
     title: 'Reunión Inicial',
-    description: 'Escuchamos tus ideas, necesidades y objetivos para definir la visión del proyecto.',
+    description: 'Evaluacion, asesoria y contizacion de proyecto.',
   },
   {
     number: '02',
-    title: 'Diseño Arquitectónico',
-    description: 'Desarrollamos el concepto y la distribución óptima de los espacios.',
+    title: 'Propuesta tecnica de proyecto',
+    description: 'Evaluacion de presupuesto tecnico y carta gant.',
   },
   {
     number: '03',
-    title: 'Visualización 3D',
-    description: 'Creamos renders realistas que te permiten ver tu proyecto antes de construirlo.',
-  },
-  {
-    number: '04',
-    title: 'Desarrollo Técnico',
+    title: 'Servicio desarrollo tecnico',
     description: 'Preparamos planos, especificaciones y documentación para la ejecución.',
   },
   {
-    number: '05',
+    number: '04',
     title: 'Acompañamiento en Obra',
     description: 'Supervisamos la construcción para asegurar calidad y fidelidad al diseño.',
   },
@@ -981,8 +976,7 @@ export const testimonials = [
 export const stats = [
   { value: 48, suffix: '+', label: 'Proyectos entregados' },
   { value: 6, suffix: '', label: 'Años de experiencia' },
-  { value: 100, suffix: '%', label: 'Clientes satisfechos' },
-  { value: 12, suffix: 'k', label: 'm² diseñados' },
+  { value: 6, suffix: 'k', label: 'm² diseñados' },
 ]
 
 export const contactInfo = {

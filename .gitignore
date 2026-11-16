@@ -1,3 +1,16 @@
 /node_modules
 /public/build
 .next/
+
+/.next/
+/out/
+
+# Production
+/build
+
+# Environment variables
+.env
+.env.*
+
+# macOS
+.DS_Store
