@@ -7,4 +7,4 @@ const nextConfig = {
   },
 }
 
-export default nextConfign[]
+export default nextConfig
