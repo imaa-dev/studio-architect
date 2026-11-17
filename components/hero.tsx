@@ -23,15 +23,15 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div className="max-w-4xl">
-          <p className="animate-fade-up text-sm font-medium uppercase tracking-[0.35em] text-primary-foreground/70 [animation-delay:100ms]">
-            Estudio de Arquitectura · Santiago, Chile
-          </p>
-          <h1 className="mt-6 animate-fade-up font-display text-5xl font-semibold leading-[0.98] tracking-tight text-primary-foreground text-balance [animation-delay:220ms] sm:text-6xl md:text-7xl lg:text-[5.25rem]">
-            Transformamos ideas en espacios extraordinarios
+          <h1 className="animate-fade-up text-sm font-medium uppercase tracking-[0.35em] text-primary-foreground/70 [animation-delay:100ms]">
+            Estudio de Arquitectura, Arquitectura en Chile, Diseño de viviendas y Construcción
           </h1>
-          <p className="mt-8 max-w-xl animate-fade-up text-lg leading-relaxed text-primary-foreground/85 text-pretty [animation-delay:360ms]">
-            Diseño arquitectónico, visualización 3D y desarrollo integral de proyectos.
+          <p className="mt-6 animate-fade-up font-display text-5xl font-semibold leading-[0.98] tracking-tight text-primary-foreground text-balance [animation-delay:220ms] sm:text-6xl md:text-7xl lg:text-[5.25rem]">
+            Transformamos ideas en espacios extraordinarios
           </p>
+          <h2 className="mt-8 max-w-xl animate-fade-up text-lg leading-relaxed text-primary-foreground/85 text-pretty [animation-delay:360ms]">
+            Diseño arquitectónico, remodelacion de viviendas, Fabricacion de muebles y Diseño de casas
+          </h2>
 
           <div className="mt-10 flex animate-fade-up flex-col gap-4 sm:flex-row [animation-delay:480ms]">
             <a

@@ -23,7 +23,7 @@ const timeline = [
   { year: '2019', text: 'Nace MI Arquitectos con los primeros proyectos residenciales.' },
   { year: '2021', text: 'Proyectos de ingenieria.' },
   { year: '2023', text: 'Desarrollo de mobiliarios y remodelaciones.' },
-  { year: '2025', text: 'Desarrollo de proyectos residenciales, comerciales, industruales, remodelacion y constuccion.' },
+  { year: '2026', text: 'Desarrollo de proyectos residenciales, comerciales, industruales, remodelacion y constuccion.' },
 ]
 
 export function About() {

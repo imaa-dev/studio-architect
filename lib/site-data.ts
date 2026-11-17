@@ -12,10 +12,26 @@ export type Project = {
   gallery: string[]
 }
 
+export function getProjectSlug(project: Project) {
+  return project.title
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+}
+
+export function getProjectBySlug(category: string, slug: string) {
+  return projects.find(
+    (project) =>
+      project.category === category && getProjectSlug(project) === slug
+  )
+}
+
 export const projects: Project[] = [
   {
     title: 'Casa Cunaco',
-    category: 'casas',
+    category: 'diseno-de-viviendas',
     location: 'Cunaco, Nancagua. ',
     year: '2024',
     estructure: 'Madera, Panel SIP.',
@@ -29,7 +45,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Casa Mostazal',
-    category: 'casas',
+    category: 'diseno-de-viviendas',
     location: 'San Francisco de Mostazal',
     year: '2021',
     estructure: 'Albañilería reforzada, acero y metalcon.',
@@ -50,7 +66,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Casa La Estrella',
-    category: 'casas',
+    category: 'diseno-de-viviendas',
     location: 'San Miguel de los Llanos, La Estrella',
     year: '2022',
     estructure: 'Acero y Madera.',
@@ -69,7 +85,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Casa Malalcahuello',
-    category: 'casas',
+    category: 'diseno-de-viviendas',
     location: 'Malalcahuello, La Araucanía',
     year: '2025',
     estructure: 'Madera.',
@@ -95,7 +111,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Anteproyecto Casa Puerto Varas',
-    category: 'casas',
+    category: 'diseno-de-viviendas',
     location: 'Puerto Varas, Los Lagos',
     year: '2025',
     estructure: 'Madera, Panel SIP.',
@@ -119,7 +135,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Conjunto de Cabañas Puerto Varas',
-    category: 'casas',
+    category: 'diseno-de-viviendas',
     location: 'Puerto Varas, Los Lagos',
     year: '',
     estructure: '',
@@ -145,7 +161,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Casa Melipilla',
-    category: 'remodelacion',
+    category: 'remodelaciones-de-viviendas',
     location: 'Melipilla, Santiago',
     year: '2024',
     estructure: 'Acero y metalcon.',
@@ -165,7 +181,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Casa Esmeralda',
-    category: 'remodelacion',
+    category: 'remodelaciones-de-viviendas',
     location: 'La Florida, Santiago',
     year: '2024',
     estructure: 'Acero y metalcon.',
@@ -190,7 +206,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Casa Litueche',
-    category: 'remodelacion',
+    category: 'remodelaciones-de-viviendas',
     location: 'Melipilla, Santiago R.M.',
     year: '2024',
     estructure: 'Metalcon, Madera.',
@@ -211,7 +227,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Casa San Bernardo',
-    category: 'remodelacion',
+    category: 'remodelaciones-de-viviendas',
     location: 'San Bernardo, Santiago R.M.',
     year: '2023',
     estructure: 'Acero, Metalcon.',
@@ -233,7 +249,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Quincho Newen IV',
-    category: 'remodelacion',
+    category: 'remodelaciones-de-viviendas',
     location: 'Puente Alto, Santiago R.M.',
     year: '2025',
     estructure: 'Acero, Metalcon, Hormigón armado.',
@@ -255,7 +271,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Casa Gascuña',
-    category: 'remodelacion',
+    category: 'remodelaciones-de-viviendas',
     location: '',
     year: '',
     estructure: 'Visualización 3D',
@@ -290,7 +306,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Casa Holanda',
-    category: 'remodelacion',
+    category: 'remodelaciones-de-viviendas',
     location: '',
     year: '',
     estructure: 'Remodelación',
@@ -324,7 +340,7 @@ export const projects: Project[] = [
   },
   {
   title: 'Casa La Vendimia',
-  category: 'remodelacion',
+  category: 'remodelaciones-de-viviendas',
   location: '',
   year: '',
   estructure: 'Remodelación',
@@ -747,6 +763,9 @@ export const projects: Project[] = [
 export interface ProjectCategory {
   slug: string
   title: string
+  headingTitle?: string
+  cardTitle?: string
+  detailCategory?: string
   category: string
   description: string
   image: string
@@ -763,8 +782,8 @@ export interface ProjectCategory {
 
 export const projectCategories: ProjectCategory[] = [
   {
-    slug: 'casas',
-    title: 'Casas',
+    slug: 'diseno-de-viviendas',
+    title: 'Diseño de viviendas',
     category: 'casas',
     description:
       'Proyectos de arquitectura residencial diseñados para mejorar la calidad de vida, combinando funcionalidad, diseño y una integración armónica con el entorno.',
@@ -787,8 +806,11 @@ export const projectCategories: ProjectCategory[] = [
     },
   },
   {
-    slug: 'remodelacion',
-    title: 'Remodelaciones',
+    slug: 'remodelaciones-de-viviendas',
+    title: 'Remodelaciones de viviendas',
+    headingTitle: 'Remodelacion de viviendas',
+    cardTitle: 'Remodelacion de viviendas',
+    detailCategory: 'Remodelacion de viviendas',
     category: 'remodelacion',
     description:
       'Intervenciones arquitectónicas que transforman espacios existentes, optimizando su funcionalidad, estética y eficiencia.',
@@ -886,6 +908,7 @@ export const projectCategories: ProjectCategory[] = [
 
 export type Service = {
   number: string
+  slug: string
   title: string
   description: string
 }
@@ -894,40 +917,50 @@ export const services: Service[] = [
   {
     number: '01',
     title: 'Diseño de Arquitectura',
+    slug: 'diseno-arquitectura',
     description:
       'Combinamos diseño e innovación para crear espacios icónicos e ideales. Aplicamos tecnologías de construcción y sistemas que optimizan la eficiencia energética.',
   },
   {
     number: '02',
     title: 'Visualización 3D',
+    slug: 'visualizacion-3d',
     description:
       'Damos vida a tus proyectos antes de que se construyan. Modelado 3D y visualización arquitectónica con representaciones realistas y detalladas.',
   },
   {
     number: '03',
     title: 'Diseño de Interiores',
+    slug: 'diseno-interiores',
     description:
       'Convertimos tus espacios en entornos funcionales, elegantes y llenos de armonía, con mobiliario a medida y personalizado que refleja tu esencia.',
   },
   {
     number: '04',
     title: 'Asesoría en Construcción',
+    slug: 'asesoria-construccion',
     description:
       'Acompañamiento técnico integral, supervisión en obra y análisis constructivo para garantizar el mejor resultado en cada etapa del proyecto.',
   },
   {
     number: '05',
     title: 'Remodelación',
+    slug: 'remodelacion',
     description:
       'Renovamos y revalorizamos espacios existentes, optimizando su funcionalidad, confort y estética con soluciones a la medida de cada cliente.',
   },
   {
     number: '06',
     title: 'Proyectos Comerciales',
+    slug: 'proyectos-comerciales',
     description:
       'Diseñamos oficinas, locales y espacios comerciales que potencian la identidad de cada marca, alineados con sus objetivos estratégicos.',
   },
 ]
+
+export function getServiceBySlug(slug: string) {
+  return services.find((service) => service.slug === slug)
+}
 
 export const processSteps = [
   {

@@ -16,11 +16,11 @@ export function Process() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
           {processSteps.map((step, i) => (
             <Reveal
               key={step.number}
-              delay={(i % 5) * 80}
+              delay={(i % 4) * 80}
               className="group flex flex-col bg-foreground p-8 transition-colors duration-500 hover:bg-white/[0.04]"
             >
               <span className="font-display text-5xl font-semibold tracking-tight text-primary-foreground/25 transition-colors duration-500 group-hover:text-wood">

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 import { services } from '@/lib/site-data'
@@ -23,16 +24,21 @@ export function Services() {
               key={service.number}
               as="article"
               delay={(i % 3) * 90}
-              className="group relative flex flex-col bg-card p-8 transition-colors duration-500 hover:bg-secondary lg:p-10"
+              className="group relative flex bg-card transition-colors duration-500 hover:bg-secondary"
             >
-              <div className="flex items-start justify-between">
-                <span className="font-display text-sm font-semibold text-wood">{service.number}</span>
-                <ArrowUpRight className="h-5 w-5 text-muted-foreground/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
-              </div>
-              <h3 className="mt-10 font-display text-2xl font-semibold tracking-tight text-balance">{service.title}</h3>
-              <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground text-pretty">
-                {service.description}
-              </p>
+              <Link
+                href={`/servicios/${service.slug}`}
+                className="flex w-full flex-col p-8 lg:p-10"
+              >
+                <div className="flex items-start justify-between">
+                  <span className="font-display text-sm font-semibold text-wood">{service.number}</span>
+                  <ArrowUpRight className="h-5 w-5 text-muted-foreground/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
+                </div>
+                <h3 className="mt-10 font-display text-2xl font-semibold tracking-tight text-balance">{service.title}</h3>
+                <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground text-pretty">
+                  {service.description}
+                </p>
+              </Link>
             </Reveal>
           ))}
         </div>

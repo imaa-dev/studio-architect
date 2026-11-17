@@ -53,12 +53,8 @@ export function Projects() {
                 {/* Contenido */}
                 <div className="relative mt-auto flex w-full items-end justify-between gap-6 p-8">
                   <div className="max-w-md">
-                    <span className="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-medium uppercase tracking-[0.25em] text-white backdrop-blur-sm">
-                      Categoría
-                    </span>
-
-                    <h3 className="mt-4 font-display text-3xl font-semibold text-white">
-                      {category.title}
+                    <h3 className="font-display text-3xl font-semibold text-white">
+                      {category.cardTitle ?? category.title}
                     </h3>
 
                     <p className="mt-3 text-sm leading-relaxed text-white/75">

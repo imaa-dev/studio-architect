@@ -145,7 +145,7 @@ export default async function CategoryPage(
               text-white
               sm:text-6xl
             ">
-              {projectCategory.title}
+              {projectCategory.headingTitle ?? projectCategory.title}
             </h1>
 
 
