@@ -1,4 +1,3 @@
-import { Counter } from '@/components/counter'
 import { Reveal } from '@/components/reveal'
 import { stats } from '@/lib/site-data'
 
@@ -10,7 +9,8 @@ export function Stats() {
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 90} className="text-center lg:text-left">
               <p className="font-display text-5xl font-semibold tracking-tight sm:text-6xl">
-                <Counter value={stat.value} suffix={stat.suffix} />
+                {stat.value}
+                {stat.suffix}
               </p>
               <p className="mt-3 text-sm font-medium uppercase tracking-wider text-muted-foreground">{stat.label}</p>
             </Reveal>
