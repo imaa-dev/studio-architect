@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { Inter, Inter_Tight } from 'next/font/google'
+import { organizationJsonLd, websiteJsonLd } from '@/lib/seo'
 import './globals.css'
 
 const inter = Inter({
@@ -42,9 +43,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_CL',
     siteName: 'MI Arquitectos',
+    images: [
+      {
+        url: '/images/hero.jpg',
+        width: 1024,
+        height: 1024,
+        alt: 'MI Arquitectos, estudio de arquitectura en Santiago de Chile',
+      },
+    ],
   },
-  icons: {
-    icon: '/icon.jpg',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MI Arquitectos | Diseño arquitectónico y visualización 3D',
+    description:
+      'Estudio de arquitectura en Santiago de Chile: diseño arquitectónico, visualización 3D, interiores y remodelación.',
+    images: ['/images/hero.jpg'],
   },
   generator: 'v0.app',
 }
@@ -71,6 +84,14 @@ export default function RootLayout({
           />
         </noscript>
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         {process.env.NODE_ENV === 'production' && <Analytics />}
         <Script id="google-tag-manager" strategy="beforeInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

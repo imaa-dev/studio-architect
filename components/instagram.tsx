@@ -4,32 +4,39 @@ import { contactInfo } from '@/lib/site-data'
 
 type GalleryItem = {
   image: string
+  alt: string
   instagramUrl: string
 }
 
 const gallery: GalleryItem[] = [
   {
-    image: '/images/remodelaciones/casamelipilla/Frontis Melipilla.png',
+    image: '/images/remodelaciones/casamelipilla/Frontis Melipilla.jpg',
+    alt: 'Remodelación y ampliación de fachada de Casa Melipilla',
     instagramUrl: 'https://www.instagram.com/p/DPTWAfeDv8j/?img_index=1',
   },
   {
     image: '/images/comerciales-oficinas/cliniplastic/3.jpeg',
+    alt: 'Remodelación interior de la clínica Cliniplastic',
     instagramUrl: 'https://www.instagram.com/miarquitectos_/p/DV2I92kDv1l/',
   },
   {
-    image: '/images/remodelaciones/casalitueche/01.png',
+    image: '/images/remodelaciones/casalitueche/01.jpg',
+    alt: 'Remodelación y ampliación de Casa Litueche',
     instagramUrl: 'https://www.instagram.com/p/DPXduAtjhUh/?img_index=1',
   },
   {
     image: '/images/casas/casamalalcahuello/r1.jpg',
+    alt: 'Casa Malalcahuello construida en madera en La Araucanía',
     instagramUrl: 'https://www.instagram.com/p/DHy8od2JPtd/?img_index=1',
   },
   {
     image: '/images/casas/casalaestrella/2.jpg',
+    alt: 'Casa La Estrella de acero y madera en San Miguel de los Llanos',
     instagramUrl: 'https://www.instagram.com/p/DHm2tKdOi4j/?img_index=1',
   },
   {
     image: '/images/casas/casamostazal/28.jpg',
+    alt: 'Casa Mostazal, vivienda unifamiliar en San Francisco de Mostazal',
     instagramUrl: 'https://www.instagram.com/p/DHtuMxYOPs7/?img_index=1',
   },
 ]
@@ -62,7 +69,7 @@ export function InstagramGallery() {
               href={item.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Ver publicación en Instagram"
+              aria-label={`Ver publicación en Instagram: ${item.alt}`}
             >
               <Reveal
                 delay={(i % 6) * 60}
@@ -70,7 +77,7 @@ export function InstagramGallery() {
               >
                 <img
                   src={item.image || '/placeholder.svg'}
-                  alt="Proyecto de MI Arquitectos"
+                  alt={item.alt}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 

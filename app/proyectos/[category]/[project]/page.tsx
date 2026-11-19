@@ -13,6 +13,7 @@ import {
   getProjectBySlug,
   type Project,
 } from '@/lib/site-data'
+import { breadcrumbJsonLd, projectImageJsonLd, SITE_URL } from '@/lib/seo'
 import ProjectGrid from '../ProjectGrid'
 
 export function generateStaticParams() {
@@ -73,9 +74,13 @@ export async function generateMetadata({
   return {
     title: project.title,
     description,
+    alternates: {
+      canonical: `${SITE_URL}/proyectos/${category}/${projectSlug}/`,
+    },
     openGraph: {
       title: `${project.title} | ${projectCategory.title}`,
       description,
+      url: `${SITE_URL}/proyectos/${category}/${projectSlug}/`,
       images: [{ url: project.image, alt: project.title }],
     },
   }
@@ -107,6 +112,32 @@ export default async function ProjectPage({
     <>
       <Navbar />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: 'Inicio', path: '/' },
+              { name: 'Proyectos', path: '/proyectos/' },
+              { name: projectCategory.title, path: `/proyectos/${category}/` },
+              {
+                name: project.title,
+                path: `/proyectos/${category}/${projectSlug}/`,
+              },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            projectImageJsonLd(project, `/proyectos/${category}/${projectSlug}/`)
+          ),
+        }}
+      />
+
       <main>
         {/* Hero proyecto */}
 
@@ -115,6 +146,7 @@ export default async function ProjectPage({
             <img
               src={project.image}
               alt={project.title}
+              fetchPriority="high"
               className="h-full w-full object-cover"
             />
 
@@ -123,7 +155,7 @@ export default async function ProjectPage({
 
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 lg:px-10">
             <nav className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/60">
-              <Link href="/#proyectos" className="transition hover:text-white">
+              <Link href="/proyectos" className="transition hover:text-white">
                 Proyectos
               </Link>
               <span>/</span>
@@ -246,7 +278,7 @@ export default async function ProjectPage({
                 >
                   <img
                     src={image}
-                    alt={`${project.title} ${index + 1}`}
+                    alt={`${project.title}${project.location ? `, ${project.location}` : ''} — imagen ${index + 1}`}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />

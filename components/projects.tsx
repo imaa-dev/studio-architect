@@ -21,10 +21,19 @@ export function Projects() {
               Proyectos destacados
             </h2>
           </div>
-          <p className="max-w-md text-base leading-relaxed text-muted-foreground text-pretty">
-            Desarrollamos e implementamos proyectos arquitectónicos adaptados al cliente, empresa y marca de cualquier
-            industria, creando espacios funcionales, innovadores y alineados con su identidad.
-          </p>
+          <div className="max-w-md">
+            <p className="text-base leading-relaxed text-muted-foreground text-pretty">
+              Desarrollamos e implementamos proyectos arquitectónicos adaptados al cliente, empresa y marca de cualquier
+              industria, creando espacios funcionales, innovadores y alineados con su identidad.
+            </p>
+            <Link
+              href="/proyectos"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-wood transition hover:opacity-70"
+            >
+              Ver todos los proyectos
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
         </Reveal>
 
         {/* Filters */}

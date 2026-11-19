@@ -52,8 +52,9 @@ export const projects: Project[] = [
     area: '163,75m2',
     image: '/images/casas/casamostazal/28.jpg',
     span: 'regular',
-    summary: '',
-    scope: [],
+    summary:
+      'Vivienda unifamiliar de 163,75 m² en San Francisco de Mostazal, resuelta con albañilería reforzada, acero y metalcon. El proyecto prioriza la eficiencia espacial y una fachada de líneas simples integrada al clima de la zona central.',
+    scope: ['Diseño arquitectónico', 'Desarrollo técnico'],
     gallery: [
       '/images/casas/casamostazal/28.jpg',
       '/images/casas/casamostazal/29.jpg',
@@ -73,8 +74,9 @@ export const projects: Project[] = [
     area: '66,25m2',
     image: '/images/casas/casalaestrella/2.jpg',
     span: 'regular',
-    summary: '',
-    scope: [],
+    summary:
+      'Casa de 66,25 m² en San Miguel de los Llanos, La Estrella, estructurada en acero y madera. Una vivienda compacta y luminosa que optimiza cada metro cuadrado y se integra al entorno rural.',
+    scope: ['Diseño arquitectónico', 'Visualización 3D'],
     gallery: [
       '/images/casas/casalaestrella/2.jpg',
       '/images/casas/casalaestrella/1.jpg',
@@ -92,8 +94,9 @@ export const projects: Project[] = [
     area: '103m2',
     image: '/images/casas/casamalalcahuello/r1.jpg',
     span: 'regular',
-    summary: '',
-    scope: [],
+    summary:
+      'Vivienda de 103 m² en Malalcahuello, La Araucanía, construida íntegramente en madera. El diseño responde al clima del sur de Chile con una volumetría simple, cubierta a dos aguas y una estrecha relación con el bosque nativo.',
+    scope: ['Diseño arquitectónico', 'Visualización 3D', 'Desarrollo técnico'],
     gallery: [
       '/images/casas/casamalalcahuello/r1.jpg',
       '/images/casas/casamalalcahuello/r2.jpg',
@@ -166,7 +169,7 @@ export const projects: Project[] = [
     year: '2024',
     estructure: 'Acero y metalcon.',
     area: '',
-    image: '/images/remodelaciones/casamelipilla/Frontis Melipilla.png',
+    image: '/images/remodelaciones/casamelipilla/Frontis Melipilla.jpg',
     span: 'regular',
     summary: 'Ampliación de segundo piso y diseño integral de fachada.',
     scope: [
@@ -174,9 +177,9 @@ export const projects: Project[] = [
       'Diseño de fachada',
     ],
     gallery: [
-      '/images/remodelaciones/casamelipilla/Frontis Melipilla.png',
-      '/images/remodelaciones/casamelipilla/Frontis Melipilla 2.png',
-      '/images/remodelaciones/casamelipilla/Frontis Melipilla 3.png',
+      '/images/remodelaciones/casamelipilla/Frontis Melipilla.jpg',
+      '/images/remodelaciones/casamelipilla/Frontis Melipilla 2.jpg',
+      '/images/remodelaciones/casamelipilla/Frontis Melipilla 3.jpg',
     ],
   },
   {
@@ -211,7 +214,7 @@ export const projects: Project[] = [
     year: '2024',
     estructure: 'Metalcon, Madera.',
     area: '',
-    image: '/images/remodelaciones/casalitueche/01.png',
+    image: '/images/remodelaciones/casalitueche/01.jpg',
     span: 'regular',
     summary: 'Proyecto de remodelación y ampliación residencial.',
     scope: [
@@ -219,10 +222,10 @@ export const projects: Project[] = [
       'Diseño arquitectónico',
     ],
     gallery: [
-      '/images/remodelaciones/casalitueche/01.png',
-      '/images/remodelaciones/casalitueche/02.png',
-      '/images/remodelaciones/casalitueche/03.png',
-      '/images/remodelaciones/casalitueche/04.png',
+      '/images/remodelaciones/casalitueche/01.jpg',
+      '/images/remodelaciones/casalitueche/02.jpg',
+      '/images/remodelaciones/casalitueche/03.jpg',
+      '/images/remodelaciones/casalitueche/04.jpg',
     ],
   },
   {
@@ -232,7 +235,7 @@ export const projects: Project[] = [
     year: '2023',
     estructure: 'Acero, Metalcon.',
     area: '',
-    image: '/images/remodelaciones/casasanbernardo/san bernardo 01.png',
+    image: '/images/remodelaciones/casasanbernardo/san bernardo 01.jpg',
     span: 'regular',
     summary: 'Proyecto de remodelación y ampliación residencial.',
     scope: [
@@ -240,11 +243,11 @@ export const projects: Project[] = [
       'Diseño arquitectónico',
     ],
     gallery: [
-      '/images/remodelaciones/casasanbernardo/san bernardo 01.png',
-      '/images/remodelaciones/casasanbernardo/san bernardo 02.png',
-      '/images/remodelaciones/casasanbernardo/san bernardo 03.png',
-      '/images/remodelaciones/casasanbernardo/san bernardo 04.png',
-      '/images/remodelaciones/casasanbernardo/san bernardo 05.png',
+      '/images/remodelaciones/casasanbernardo/san bernardo 01.jpg',
+      '/images/remodelaciones/casasanbernardo/san bernardo 02.jpg',
+      '/images/remodelaciones/casasanbernardo/san bernardo 03.jpg',
+      '/images/remodelaciones/casasanbernardo/san bernardo 04.jpg',
+      '/images/remodelaciones/casasanbernardo/san bernardo 05.jpg',
     ],
   },
   {
@@ -345,7 +348,7 @@ export const projects: Project[] = [
   year: '',
   estructure: 'Remodelación',
   area: '',
-  image: '/images/remodelaciones/casa-la-vendimia/R1.png',
+  image: '/images/remodelaciones/casa-la-vendimia/R1.jpg',
   span: 'regular',
   summary: 'Proyecto de remodelación para Casa La Vendimia.',
   scope: [
@@ -354,14 +357,14 @@ export const projects: Project[] = [
     'Visualización 3D',
   ],
   gallery: [
-    '/images/remodelaciones/casa-la-vendimia/R1.png',
-    '/images/remodelaciones/casa-la-vendimia/R2.png',
-    '/images/remodelaciones/casa-la-vendimia/R3.png',
-    '/images/remodelaciones/casa-la-vendimia/R4.png',
-    '/images/remodelaciones/casa-la-vendimia/R5.png',
-    '/images/remodelaciones/casa-la-vendimia/R6.png',
-    '/images/remodelaciones/casa-la-vendimia/R7.png',
-    '/images/remodelaciones/casa-la-vendimia/R8.png',
+    '/images/remodelaciones/casa-la-vendimia/R1.jpg',
+    '/images/remodelaciones/casa-la-vendimia/R2.jpg',
+    '/images/remodelaciones/casa-la-vendimia/R3.jpg',
+    '/images/remodelaciones/casa-la-vendimia/R4.jpg',
+    '/images/remodelaciones/casa-la-vendimia/R5.jpg',
+    '/images/remodelaciones/casa-la-vendimia/R6.jpg',
+    '/images/remodelaciones/casa-la-vendimia/R7.jpg',
+    '/images/remodelaciones/casa-la-vendimia/R8.jpg',
   ],
 },
   {
@@ -486,7 +489,7 @@ export const projects: Project[] = [
     year: '2025',
     estructure: 'Melamina, MDF enchapado, cuarzo.',
     area: '',
-    image: '/images/diseno-interior-mobiliario/cocina/05.png',
+    image: '/images/diseno-interior-mobiliario/cocina/05.jpg',
     span: 'regular',
     summary: 'Diseño contemporáneo de cocina con mobiliario a medida y cubierta de cuarzo.',
     scope: [
@@ -495,9 +498,9 @@ export const projects: Project[] = [
       'Visualización 3D',
     ],
     gallery: [
-      '/images/diseno-interior-mobiliario/cocina/05.png',
-      '/images/diseno-interior-mobiliario/cocina/06.png',
-      '/images/diseno-interior-mobiliario/cocina/07.png',
+      '/images/diseno-interior-mobiliario/cocina/05.jpg',
+      '/images/diseno-interior-mobiliario/cocina/06.jpg',
+      '/images/diseno-interior-mobiliario/cocina/07.jpg',
     ],
   },
   {
@@ -552,7 +555,7 @@ export const projects: Project[] = [
     year: '2025',
     estructure: 'Acero.',
     area: '',
-    image: '/images/comerciales-oficinas/remodelacion/render 004.png',
+    image: '/images/comerciales-oficinas/remodelacion/render 004.jpg',
     span: 'regular',
     summary: 'Propuesta de remodelación de fachada corporativa mediante visualización arquitectónica.',
     scope: [
@@ -560,9 +563,9 @@ export const projects: Project[] = [
       'Visualización 3D',
     ],
     gallery: [
-      '/images/comerciales-oficinas/remodelacion/render 004.png',
-      '/images/comerciales-oficinas/remodelacion/vista tipo 0002.png',
-      '/images/comerciales-oficinas/remodelacion/vista tipo 003 (3).png',
+      '/images/comerciales-oficinas/remodelacion/render 004.jpg',
+      '/images/comerciales-oficinas/remodelacion/vista tipo 0002.jpg',
+      '/images/comerciales-oficinas/remodelacion/vista tipo 003 (3).jpg',
     ],
   },
   {
@@ -572,7 +575,7 @@ export const projects: Project[] = [
     year: '2025',
     estructure: 'Acero, melamina.',
     area: '',
-    image: '/images/comerciales-oficinas/laboratorio/vista 02 color 1.png',
+    image: '/images/comerciales-oficinas/laboratorio/vista 02 color 1.jpg',
     span: 'regular',
     summary: 'Diseño arquitectónico y propuesta interior para laboratorio clínico.',
     scope: [
@@ -581,10 +584,10 @@ export const projects: Project[] = [
       'Visualización 3D',
     ],
     gallery: [
-      '/images/comerciales-oficinas/laboratorio/vista 02 color 1.png',
-      '/images/comerciales-oficinas/laboratorio/vista 02 color 2.png',
-      '/images/comerciales-oficinas/laboratorio/vista 03 color 1.png',
-      '/images/comerciales-oficinas/laboratorio/vista 03 color 2.png',
+      '/images/comerciales-oficinas/laboratorio/vista 02 color 1.jpg',
+      '/images/comerciales-oficinas/laboratorio/vista 02 color 2.jpg',
+      '/images/comerciales-oficinas/laboratorio/vista 03 color 1.jpg',
+      '/images/comerciales-oficinas/laboratorio/vista 03 color 2.jpg',
     ],
   },
   {
@@ -686,7 +689,7 @@ export const projects: Project[] = [
     year: '',
     estructure: 'Visualización 3D',
     area: '',
-    image: '/images/visualizacion-eventos-publicidad/VansXFuelfest/R1 (2).png',
+    image: '/images/visualizacion-eventos-publicidad/VansXFuelfest/R1 (2).jpg',
     span: 'wide',
     summary: 'Desarrollo de renders para activación de marca y evento automotriz.',
     scope: [
@@ -695,18 +698,18 @@ export const projects: Project[] = [
       'Diseño de evento',
     ],
     gallery: [
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R1 (2).png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R2 (2).png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R3 (2).png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R4 (2).png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R5 (2).png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R6 (2).png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R7.png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R8.png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R9.png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R10.png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R11.png',
-      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R13.png',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R1 (2).jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R2 (2).jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R3 (2).jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R4 (2).jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R5 (2).jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R6 (2).jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R7.jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R8.jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R9.jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R10.jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R11.jpg',
+      '/images/visualizacion-eventos-publicidad/VansXFuelfest/R13.jpg',
     ],
   },
 
@@ -717,7 +720,7 @@ export const projects: Project[] = [
     year: '',
     estructure: 'Visualización 3D',
     area: '',
-    image: '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R1 (1).png',
+    image: '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R1 (1).jpg',
     span: 'regular',
     summary: 'Visualización para activación corporativa y experiencia de marca.',
     scope: [
@@ -726,12 +729,12 @@ export const projects: Project[] = [
       'Renderizado',
     ],
     gallery: [
-      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R1 (1).png',
-      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R2 (1).png',
-      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R3 (1).png',
-      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R4 (1).png',
-      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R5 (1).png',
-      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R6 (1).png',
+      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R1 (1).jpg',
+      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R2 (1).jpg',
+      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R3 (1).jpg',
+      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R4 (1).jpg',
+      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R5 (1).jpg',
+      '/images/visualizacion-eventos-publicidad/Zignal X AfpHabitat/R6 (1).jpg',
     ],
   },
 
@@ -793,28 +796,28 @@ export const projectCategories: ProjectCategory[] = [
       eyebrow: 'Proyectos',
 
       title:
-        'Renovamos espacios para una nueva forma de vivir.',
+        'Casas diseñadas para tu forma de vivir.',
 
       description:
-        'Cada remodelación busca potenciar el inmueble existente, incorporando nuevas distribuciones, materialidades y soluciones contemporáneas que respetan su contexto y aumentan su valor.',
+        'Diseñamos viviendas unifamiliares que combinan funcionalidad, eficiencia energética y una relación armónica con el entorno. Cada casa se adapta al terreno, al presupuesto y al estilo de vida de sus habitantes, desde la idea inicial hasta su construcción.',
 
       counterLabel:
         'Portafolio',
 
       counterDescription:
-        'proyectos de remodelación ejecutados.',
+        'casas y anteproyectos desarrollados.',
     },
   },
   {
     slug: 'remodelaciones-de-viviendas',
     title: 'Remodelaciones de viviendas',
-    headingTitle: 'Remodelacion de viviendas',
-    cardTitle: 'Remodelacion de viviendas',
-    detailCategory: 'Remodelacion de viviendas',
+    headingTitle: 'Remodelación de viviendas',
+    cardTitle: 'Remodelación de viviendas',
+    detailCategory: 'Remodelación de viviendas',
     category: 'remodelacion',
     description:
       'Intervenciones arquitectónicas que transforman espacios existentes, optimizando su funcionalidad, estética y eficiencia.',
-    image: '/images/remodelaciones/casamelipilla/Frontis%20Melipilla.png',
+    image: '/images/remodelaciones/casamelipilla/Frontis Melipilla.jpg',
     total: 8,
         intro: {
       eyebrow: 'Proyectos',
@@ -834,26 +837,26 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     slug: 'comerciales',
-    title: 'Comerciales',
+    title: 'Proyectos comerciales',
     category: 'comerciales',
     description:
       'Diseño y desarrollo de oficinas, clínicas y espacios comerciales adaptados a la identidad y objetivos de cada empresa.',
-    image: '/images/comerciales-oficinas/remodelacion/vista%20tipo%20003%20(3).png',
+    image: '/images/comerciales-oficinas/remodelacion/vista tipo 003 (3).jpg',
     total: 6,
         intro: {
       eyebrow: 'Proyectos',
 
       title:
-        'Renovamos espacios para una nueva forma de vivir.',
+        'Espacios comerciales que representan tu marca.',
 
       description:
-        'Cada remodelación busca potenciar el inmueble existente, incorporando nuevas distribuciones, materialidades y soluciones contemporáneas que respetan su contexto y aumentan su valor.',
+        'Diseñamos oficinas, clínicas, locales y espacios corporativos que combinan identidad de marca, funcionalidad y cumplimiento normativo. Cada proyecto busca mejorar la experiencia de clientes y equipos, optimizando la distribución y la materialidad.',
 
       counterLabel:
         'Portafolio',
 
       counterDescription:
-        'proyectos de remodelación ejecutados.',
+        'proyectos comerciales y de oficinas desarrollados.',
     },
   },
   {
@@ -862,22 +865,22 @@ export const projectCategories: ProjectCategory[] = [
     category: 'interiores',
     description:
       'Diseño de interiores y mobiliario personalizado que combina materiales, funcionalidad y detalles para crear espacios únicos.',
-    image: '/images/diseno-interior-mobiliario/cocina/07.png',
+    image: '/images/diseno-interior-mobiliario/cocina/07.jpg',
     total: 6,
         intro: {
       eyebrow: 'Proyectos',
 
       title:
-        'Renovamos espacios para una nueva forma de vivir.',
+        'Interiores y mobiliario pensados a medida.',
 
       description:
-        'Cada remodelación busca potenciar el inmueble existente, incorporando nuevas distribuciones, materialidades y soluciones contemporáneas que respetan su contexto y aumentan su valor.',
+        'Diseñamos ambientes y mobiliario personalizado que optimizan cada espacio, combinando materiales, iluminación y detalles funcionales. El resultado son interiores coherentes con la arquitectura y con el estilo de quienes los habitan.',
 
       counterLabel:
         'Portafolio',
 
       counterDescription:
-        'proyectos de remodelación ejecutados.',
+        'proyectos de interiorismo y mobiliario entregados.',
     },
   },
 {
@@ -886,7 +889,7 @@ export const projectCategories: ProjectCategory[] = [
   category: 'visualizacion',
   description:
     'Desarrollo de visualizaciones 3D, renders y propuestas espaciales para eventos, activaciones de marca, exhibiciones y campañas publicitarias, comunicando conceptos de forma atractiva antes de su ejecución.',
-  image: '/images/visualizacion-eventos-publicidad/VansXFuelfest/R1 (2).png',
+  image: '/images/visualizacion-eventos-publicidad/VansXFuelfest/R1 (2).jpg',
   total: 5,
   intro: {
     eyebrow: 'Proyectos',
@@ -931,7 +934,7 @@ export const services: Service[] = [
     slug: 'visualizacion-3d',
     description:
       'Damos vida a tus proyectos antes de que se construyan. Modelado 3D y visualización arquitectónica con representaciones realistas y detalladas.',
-    image: '/images/visualizacion-eventos-publicidad/VansXFuelfest/R1 (2).png',
+    image: '/images/visualizacion-eventos-publicidad/VansXFuelfest/R1 (2).jpg',
     projectCategory: 'visualizacion',
   },
   {
@@ -940,7 +943,7 @@ export const services: Service[] = [
     slug: 'diseno-interiores',
     description:
       'Convertimos tus espacios en entornos funcionales, elegantes y llenos de armonía, con mobiliario a medida y personalizado que refleja tu esencia.',
-    image: '/images/diseno-interior-mobiliario/cocina/07.png',
+    image: '/images/diseno-interior-mobiliario/cocina/07.jpg',
     projectCategory: 'interiores',
   },
   {
@@ -967,7 +970,7 @@ export const services: Service[] = [
     slug: 'proyectos-comerciales',
     description:
       'Diseñamos oficinas, locales y espacios comerciales que potencian la identidad de cada marca, alineados con sus objetivos estratégicos.',
-    image: '/images/comerciales-oficinas/remodelacion/vista%20tipo%20003%20(3).png',
+    image: '/images/comerciales-oficinas/remodelacion/vista tipo 003 (3).jpg',
     projectCategory: 'comerciales',
   },
   {

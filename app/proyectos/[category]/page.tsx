@@ -7,6 +7,7 @@ import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 
 import { projects, projectCategories, Project } from '@/lib/site-data'
+import { breadcrumbJsonLd, SITE_URL } from '@/lib/seo'
 import ProjectGrid from './ProjectGrid'
 
 
@@ -51,9 +52,21 @@ export async function generateMetadata(
   }
 
 
+  const metaTitle = `${projectCategory.headingTitle ?? projectCategory.title} en Santiago de Chile`
+  const metaDescription = `${projectCategory.description} Proyectos en Santiago y todo Chile.`
+
   return {
-    title: `${projectCategory.title} | Proyectos`,
-    description: projectCategory.description,
+    title: metaTitle,
+    description: metaDescription,
+    alternates: {
+      canonical: `${SITE_URL}/proyectos/${category}/`,
+    },
+    openGraph: {
+      title: `${metaTitle} | ${projectCategory.title}`,
+      description: metaDescription,
+      url: `${SITE_URL}/proyectos/${category}/`,
+      images: [{ url: projectCategory.image, alt: projectCategory.title }],
+    },
   }
 }
 
@@ -85,6 +98,19 @@ export default async function CategoryPage(
     <>
       <Navbar />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: 'Inicio', path: '/' },
+              { name: 'Proyectos', path: '/proyectos/' },
+              { name: projectCategory.title, path: `/proyectos/${category}/` },
+            ])
+          ),
+        }}
+      />
+
       <main>
 
 
@@ -97,6 +123,7 @@ export default async function CategoryPage(
             <img
               src={projectCategory.image}
               alt={projectCategory.title}
+              fetchPriority="high"
               className="h-full w-full object-cover"
             />
 

@@ -19,6 +19,13 @@ export function Services() {
             Diseñamos y desarrollamos espacios que combinan creatividad, funcionalidad y estrategia para potenciar la
             identidad de cada cliente y marca, asegurando soluciones personalizadas y de alto impacto.
           </p>
+          <Link
+            href="/servicios"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-wood transition hover:opacity-70"
+          >
+            Ver todos los servicios
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </Reveal>
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">

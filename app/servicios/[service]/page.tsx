@@ -7,6 +7,9 @@ import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 
 import { services, projects, getServiceBySlug } from '@/lib/site-data'
+import { serviceFaqs } from '@/lib/faq'
+import { Faq } from '@/components/faq'
+import { breadcrumbJsonLd, faqJsonLd, serviceJsonLd, SITE_URL } from '@/lib/seo'
 import ProjectGrid from '../../proyectos/[category]/ProjectGrid'
 
 export function generateStaticParams() {
@@ -38,12 +41,19 @@ export async function generateMetadata({
     return { title: 'Servicio no encontrado' }
   }
 
+  const metaTitle = `${service.title} en Santiago de Chile`
+  const metaDescription = `${service.description} Atención en Santiago y todo Chile.`
+
   return {
-    title: service.title,
-    description: service.description,
+    title: metaTitle,
+    description: metaDescription,
+    alternates: {
+      canonical: `${SITE_URL}/servicios/${slug}/`,
+    },
     openGraph: {
-      title: service.title,
-      description: service.description,
+      title: metaTitle,
+      description: metaDescription,
+      url: `${SITE_URL}/servicios/${slug}/`,
       images: [{ url: service.image, alt: service.title }],
     },
   }
@@ -64,10 +74,35 @@ export default async function ServicePage({
 
   const otherServices = getOtherServices(slug)
   const relatedProjects = getRelatedProjects(service.projectCategory)
+  const faqs = serviceFaqs[slug] ?? []
 
   return (
     <>
       <Navbar />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: 'Inicio', path: '/' },
+              { name: 'Servicios', path: '/servicios/' },
+              { name: service.title, path: `/servicios/${slug}/` },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd(service)) }}
+      />
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+        />
+      )}
 
       <main>
         {/* Hero servicio */}
@@ -77,6 +112,7 @@ export default async function ServicePage({
             <img
               src={service.image}
               alt={service.title}
+              fetchPriority="high"
               className="h-full w-full object-cover"
             />
 
@@ -85,7 +121,7 @@ export default async function ServicePage({
 
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
             <nav className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/60">
-              <Link href="/#servicios" className="transition hover:text-white">
+              <Link href="/servicios" className="transition hover:text-white">
                 Servicios
               </Link>
               <span>/</span>
@@ -107,7 +143,7 @@ export default async function ServicePage({
         <section className="border-b border-border bg-background py-6">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <Link
-              href="/#servicios"
+              href="/servicios"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -159,6 +195,13 @@ export default async function ServicePage({
           </div>
         </section>
 
+        {faqs.length > 0 && (
+          <Faq
+            items={faqs}
+            title={`Preguntas frecuentes sobre ${service.title.toLowerCase()}`}
+          />
+        )}
+
         {/* Continuar explorando */}
 
         <section className="border-t border-border bg-background py-20 lg:py-28">
@@ -175,7 +218,7 @@ export default async function ServicePage({
               </div>
 
               <Link
-                href="/#proyectos"
+                href="/proyectos"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground"
               >
                 Ver todos

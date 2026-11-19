@@ -51,7 +51,7 @@ export function About() {
             <Reveal>
               <p className="text-sm font-medium uppercase tracking-[0.3em] text-wood">Sobre nosotros</p>
               <h2 className="mt-4 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-5xl">
-                Arquitecto en Chile 
+                Arquitectura con identidad, desde Santiago para todo Chile
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground text-pretty">
                 En MI Arquitectos transformamos ideas en espacios únicos que no solo responden a las necesidades del

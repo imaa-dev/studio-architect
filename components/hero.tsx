@@ -7,12 +7,13 @@ export function Hero() {
       <div className="absolute inset-0">
         <video
         src="/images/video/clip.mp4"
+        poster="/images/hero.jpg"
         className="h-full w-full origin-center object-cover animate-kenburns"
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
       >
         Tu navegador no soporta la reproducción de video.
       </video>
@@ -23,15 +24,15 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div className="max-w-4xl">
-          <h1 className="animate-fade-up text-sm font-medium uppercase tracking-[0.35em] text-primary-foreground/70 [animation-delay:100ms]">
-            Estudio de arquitectura, arquitectura en Chile, diseño de viviendas y construcción.
-          </h1>
-          <p className="mt-6 animate-fade-up font-display text-5xl font-semibold leading-[0.98] tracking-tight text-primary-foreground text-balance [animation-delay:220ms] sm:text-6xl md:text-7xl lg:text-[5.25rem]">
-            Arquitectura, diseño y construcción.
+          <p className="animate-fade-up text-sm font-medium uppercase tracking-[0.35em] text-primary-foreground/70 [animation-delay:100ms]">
+            Estudio de arquitectura en Santiago, Chile
           </p>
-          <h2 className="mt-8 max-w-xl animate-fade-up text-lg leading-relaxed text-primary-foreground/85 text-pretty [animation-delay:360ms]">
-            Diseño arquitectónico, remodelación de viviendas, fabricación de muebles y diseño de casas.
-          </h2>
+          <h1 className="mt-6 animate-fade-up font-display text-5xl font-semibold leading-[0.98] tracking-tight text-primary-foreground text-balance [animation-delay:220ms] sm:text-6xl md:text-7xl lg:text-[5.25rem]">
+            Arquitectura, diseño y construcción.
+          </h1>
+          <p className="mt-8 max-w-xl animate-fade-up text-lg leading-relaxed text-primary-foreground/85 text-pretty [animation-delay:360ms]">
+            Diseño arquitectónico, remodelación de viviendas, visualización 3D y fabricación de muebles a medida en Santiago y todo Chile.
+          </p>
 
           <div className="mt-10 flex animate-fade-up flex-col gap-4 sm:flex-row [animation-delay:480ms]">
             <a

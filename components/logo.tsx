@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import { cn } from '@/lib/utils'
 
 type LogoProps = {
@@ -12,13 +14,17 @@ export function Logo({ className, variant = 'dark', showText = true }: LogoProps
     <span className={cn('flex items-center gap-3', className)}>
       <span
         className={cn(
-          'flex h-10 w-10 flex-col items-center justify-center rounded-full border leading-none',
-          isLight ? 'border-primary-foreground/30 text-primary-foreground' : 'border-foreground/20 text-foreground',
+          'flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white',
+          isLight ? 'ring-1 ring-primary-foreground/20' : 'ring-1 ring-foreground/10',
         )}
-        aria-hidden="true"
       >
-        <span className="font-display text-[15px] font-extrabold tracking-tight -mb-0.5">Mi</span>
-        <span className="text-[6px] font-semibold tracking-[0.25em]">ARQ</span>
+        <Image
+          src="/images/logo-mark.png"
+          alt="MI Arquitectos"
+          width={40}
+          height={40}
+          className="h-full w-full object-contain p-1"
+        />
       </span>
       {showText && (
         <span

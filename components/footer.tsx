@@ -1,6 +1,7 @@
 import { Logo } from '@/components/logo'
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '@/components/social-icons'
 import { contactInfo, navLinks } from '@/lib/site-data'
+import { locations } from '@/lib/locations'
 
 const socials = [
   { icon: FacebookIcon, href: contactInfo.social.facebook, label: 'Facebook' },
@@ -69,7 +70,52 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-primary-foreground/50 sm:flex-row">
+        <div className="mt-12 flex flex-col gap-8 border-t border-white/10 pt-8 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary-foreground/40">
+              Zonas de atención
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-primary-foreground/70">
+              {locations
+                .filter((location) =>
+                  ['las-condes', 'concepcion', 'temuco', 'puerto-varas'].includes(location.slug)
+                )
+                .map((location) => (
+                  <li key={location.slug}>
+                    <a
+                      href={`/arquitectos-en/${location.slug}`}
+                      className="transition-colors hover:text-primary-foreground"
+                    >
+                      Arquitectos en {location.name}
+                    </a>
+                  </li>
+                ))}
+              <li>
+                <a
+                  href="/arquitectos-en"
+                  className="transition-colors hover:text-primary-foreground"
+                >
+                  Ver todas las zonas de atención
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-primary-foreground/70 sm:justify-end">
+            <li>
+              <a href="/proyectos" className="transition-colors hover:text-primary-foreground">
+                Todos los proyectos
+              </a>
+            </li>
+            <li>
+              <a href="/servicios" className="transition-colors hover:text-primary-foreground">
+                Todos los servicios
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-primary-foreground/50 sm:flex-row">
           <p>© {new Date().getFullYear()} MI Arquitectos. Todos los derechos reservados.</p>
           <p>Santiago, Chile</p>
         </div>
