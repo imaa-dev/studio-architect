@@ -911,6 +911,8 @@ export type Service = {
   slug: string
   title: string
   description: string
+  image: string
+  projectCategory: string
 }
 
 export const services: Service[] = [
@@ -920,6 +922,8 @@ export const services: Service[] = [
     slug: 'diseno-arquitectura',
     description:
       'Combinamos diseño e innovación para crear espacios icónicos e ideales. Aplicamos tecnologías de construcción y sistemas que optimizan la eficiencia energética.',
+    image: '/images/casas/anteproyecto/render 01.jpg',
+    projectCategory: 'diseno-de-viviendas',
   },
   {
     number: '02',
@@ -927,6 +931,8 @@ export const services: Service[] = [
     slug: 'visualizacion-3d',
     description:
       'Damos vida a tus proyectos antes de que se construyan. Modelado 3D y visualización arquitectónica con representaciones realistas y detalladas.',
+    image: '/images/visualizacion-eventos-publicidad/VansXFuelfest/R1 (2).png',
+    projectCategory: 'visualizacion',
   },
   {
     number: '03',
@@ -934,6 +940,8 @@ export const services: Service[] = [
     slug: 'diseno-interiores',
     description:
       'Convertimos tus espacios en entornos funcionales, elegantes y llenos de armonía, con mobiliario a medida y personalizado que refleja tu esencia.',
+    image: '/images/diseno-interior-mobiliario/cocina/07.png',
+    projectCategory: 'interiores',
   },
   {
     number: '04',
@@ -941,6 +949,8 @@ export const services: Service[] = [
     slug: 'asesoria-construccion',
     description:
       'Acompañamiento técnico integral, supervisión en obra y análisis constructivo para garantizar el mejor resultado en cada etapa del proyecto.',
+    image: '/images/casas/casacunaco/init5.jpg',
+    projectCategory: 'diseno-de-viviendas',
   },
   {
     number: '05',
@@ -948,6 +958,8 @@ export const services: Service[] = [
     slug: 'remodelacion',
     description:
       'Renovamos y revalorizamos espacios existentes, optimizando su funcionalidad, confort y estética con soluciones a la medida de cada cliente.',
+    image: '/images/remodelaciones/casaesmeralda/1.jpg',
+    projectCategory: 'remodelaciones-de-viviendas',
   },
   {
     number: '06',
@@ -955,6 +967,17 @@ export const services: Service[] = [
     slug: 'proyectos-comerciales',
     description:
       'Diseñamos oficinas, locales y espacios comerciales que potencian la identidad de cada marca, alineados con sus objetivos estratégicos.',
+    image: '/images/comerciales-oficinas/remodelacion/vista%20tipo%20003%20(3).png',
+    projectCategory: 'comerciales',
+  },
+  {
+    number: '07',
+    title: 'Fabricación de muebles a medida',
+    slug: 'fabricacion-muebles-medida',
+    description:
+      'Diseñamos y fabricamos mobiliario personalizado para cada espacio, combinando materiales, funcionalidad y detalles a medida que reflejan tu estilo.',
+    image: '/images/diseno-interior-mobiliario/casalinderos/2.jpg',
+    projectCategory: 'interiores',
   },
 ]
 

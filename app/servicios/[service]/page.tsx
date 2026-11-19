@@ -6,7 +6,8 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 
-import { services, getServiceBySlug } from '@/lib/site-data'
+import { services, projects, getServiceBySlug } from '@/lib/site-data'
+import ProjectGrid from '../../proyectos/[category]/ProjectGrid'
 
 export function generateStaticParams() {
   return services.map((service) => ({
@@ -16,6 +17,12 @@ export function generateStaticParams() {
 
 function getOtherServices(slug: string) {
   return services.filter((service) => service.slug !== slug)
+}
+
+function getRelatedProjects(projectCategory: string) {
+  return projects
+    .filter((project) => project.category === projectCategory)
+    .slice(0, 3)
 }
 
 export async function generateMetadata({
@@ -34,6 +41,11 @@ export async function generateMetadata({
   return {
     title: service.title,
     description: service.description,
+    openGraph: {
+      title: service.title,
+      description: service.description,
+      images: [{ url: service.image, alt: service.title }],
+    },
   }
 }
 
@@ -51,6 +63,7 @@ export default async function ServicePage({
   }
 
   const otherServices = getOtherServices(slug)
+  const relatedProjects = getRelatedProjects(service.projectCategory)
 
   return (
     <>
@@ -59,25 +72,31 @@ export default async function ServicePage({
       <main>
         {/* Hero servicio */}
 
-        <section className="bg-foreground py-24 text-background lg:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <nav className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.2em] text-background/50">
-              <Link href="/#servicios" className="transition hover:text-background">
+        <section className="relative flex min-h-[70vh] items-end overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="h-full w-full object-cover"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
+          </div>
+
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+            <nav className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/60">
+              <Link href="/#servicios" className="transition hover:text-white">
                 Servicios
               </Link>
               <span>/</span>
-              <span className="text-background">{service.title}</span>
+              <span className="text-white">{service.title}</span>
             </nav>
 
-            <p className="mt-10 font-display text-sm font-semibold tracking-[0.3em] text-background/60">
-              {service.number}
-            </p>
-
-            <h1 className="mt-4 max-w-4xl font-display text-5xl font-semibold tracking-tight sm:text-6xl">
+            <h1 className="mt-10 max-w-4xl font-display text-5xl font-semibold tracking-tight text-white sm:text-6xl">
               {service.title}
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-background/70">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
               {service.description}
             </p>
           </div>
@@ -123,12 +142,6 @@ export default async function ServicePage({
               <dl className="mt-6 grid gap-6 text-sm">
                 <div>
                   <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                    Número
-                  </dt>
-                  <dd className="mt-2 font-light">{service.number}</dd>
-                </div>
-                <div>
-                  <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
                     Nombre
                   </dt>
                   <dd className="mt-2 font-light">{service.title}</dd>
@@ -146,7 +159,7 @@ export default async function ServicePage({
           </div>
         </section>
 
-        {/* Otros servicios */}
+        {/* Continuar explorando */}
 
         <section className="border-t border-border bg-background py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -157,12 +170,12 @@ export default async function ServicePage({
                 </p>
 
                 <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight">
-                  Otros servicios
+                  Proyectos de {service.title}
                 </h2>
               </div>
 
               <Link
-                href="/#servicios"
+                href="/#proyectos"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground"
               >
                 Ver todos
@@ -170,25 +183,27 @@ export default async function ServicePage({
               </Link>
             </div>
 
-            <div className="mt-10 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-              {otherServices.map((item) => (
-                <Link
-                  key={item.slug}
-                  href={`/servicios/${item.slug}`}
-                  className="group flex flex-col bg-card p-8 transition-colors duration-500 hover:bg-secondary"
-                >
-                  <div className="flex items-start justify-between">
-                    <span className="font-display text-sm font-semibold text-wood">
-                      {item.number}
-                    </span>
-                    <ArrowUpRight className="h-5 w-5 text-muted-foreground/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
-                  </div>
+            {relatedProjects.length > 0 && (
+              <ProjectGrid projects={relatedProjects} />
+            )}
 
-                  <h3 className="mt-8 font-display text-xl font-semibold tracking-tight">
-                    {item.title}
-                  </h3>
-                </Link>
-              ))}
+            <div className="mt-16 border-t border-border pt-10">
+              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Otros servicios
+              </p>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {otherServices.map((item) => (
+                  <Link
+                    key={item.slug}
+                    href={`/servicios/${item.slug}`}
+                    className="group flex items-center justify-between rounded-2xl border border-border bg-card px-5 py-4 text-sm transition-colors duration-500 hover:bg-secondary"
+                  >
+                    <span>{item.title}</span>
+                    <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>

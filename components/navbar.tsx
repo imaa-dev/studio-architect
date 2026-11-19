@@ -80,7 +80,7 @@ export function Navbar() {
               : 'bg-primary-foreground text-foreground hover:bg-primary-foreground/90',
           )}
         >
-          Solicitar Reunión
+          Solicitar cotización
         </a>
 
         <button

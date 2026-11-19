@@ -2,8 +2,11 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 import { services } from '@/lib/site-data'
+import { cn } from '@/lib/utils'
 
 export function Services() {
+  const lastRowRemainder = services.length % 3
+
   return (
     <section id="servicios" className="bg-background py-24 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -24,7 +27,12 @@ export function Services() {
               key={service.number}
               as="article"
               delay={(i % 3) * 90}
-              className="group relative flex bg-card transition-colors duration-500 hover:bg-secondary"
+              className={cn(
+                'group relative flex bg-card transition-colors duration-500 hover:bg-secondary',
+                lastRowRemainder === 1 &&
+                  i === services.length - 1 &&
+                  'sm:col-span-2 lg:col-span-1 lg:col-start-2'
+              )}
             >
               <Link
                 href={`/servicios/${service.slug}`}

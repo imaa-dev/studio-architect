@@ -24,7 +24,7 @@ export default function Page() {
         <Process />
         <Testimonials />
         <InstagramGallery />
-        <CTA />
+        {/*<CTA />*/}
         <Contact />
       </main>
       <Footer />
