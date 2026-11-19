@@ -61,7 +61,7 @@ export default function LocationsIndexPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/70 text-pretty">
               Nuestro estudio trabaja desde Santiago con proyectos en la zona centro y sur de Chile. Revisa las
-              ciudades y comunas con página propia y las regiones donde atendemos de forma remota.
+              ciudades, comunas y las regiones donde atendemos.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
